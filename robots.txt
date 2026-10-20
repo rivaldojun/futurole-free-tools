@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rivaldojun.github.io/futurole-free-tools/sitemap.xml
