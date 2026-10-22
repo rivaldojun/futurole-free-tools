@@ -1,0 +1,355 @@
+Here's the complete single-file HTML tool for the ATS Keyword Checker:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find out if your resume has the right keywords for an ATS to pass the first scan. Check missing keywords and improve your job application.">
+    <title>ATS Keyword Checker - Check Your Resume for ATS Compatibility</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --error-color: #ea4335;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --text-color: #e0e0e0;
+                --border-color: #333333;
+                --primary-color: #8ab4f8;
+                --secondary-color: #81c995;
+                --error-color: #f28b82;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .explanation {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tool-section {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            resize: vertical;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .missing-keywords {
+            margin-top: 15px;
+        }
+
+        .keyword {
+            display: inline-block;
+            background-color: var(--error-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .suggestions {
+            margin-top: 20px;
+        }
+
+        .faq {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-left: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            textarea {
+                min-height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ATS Keyword Checker</h1>
+            <p>Find out if your resume has the right keywords for an ATS to pass the first scan.</p>
+        </header>
+
+        <section class="explanation">
+            <h2>What is an ATS Keyword Checker?</h2>
+            <p>An Applicant Tracking System (ATS) is software used by employers to manage job applications. Many ATS systems scan resumes for specific keywords from job descriptions before they reach a human reviewer. This tool helps you identify which keywords from your job description are missing from your resume, increasing your chances of passing the initial ATS scan.</p>
+        </section>
+
+        <section class="tool-section">
+            <h2>Check Your Resume</h2>
+            <form id="atsForm">
+                <div>
+                    <label for="resumeText">Paste your resume text:</label>
+                    <textarea id="resumeText" placeholder="Copy and paste your resume text here..."></textarea>
+                </div>
+                <div>
+                    <label for="jobDescriptionText">Paste the job description:</label>
+                    <textarea id="jobDescriptionText" placeholder="Copy and paste the job description here..."></textarea>
+                </div>
+                <button type="submit">Check Keywords</button>
+            </form>
+
+            <div id="results" class="results">
+                <h3>Results</h3>
+                <div id="missingKeywordsCount"></div>
+                <div id="missingKeywordsList" class="missing-keywords"></div>
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Why is my resume being rejected by ATS?</div>
+                <div class="faq-answer">ATS systems often reject resumes that don't contain the exact keywords from the job description. This tool helps you identify which keywords are missing so you can optimize your resume accordingly.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I know which keywords to include?</div>
+                <div class="faq-answer">Copy the entire job description and paste it into this tool along with your resume. The tool will analyze both texts and identify keywords from the job description that are missing in your resume.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is this tool 100% accurate?</div>
+                <div class="faq-answer">While this tool provides a good estimate, ATS systems can be complex and may have additional requirements beyond simple keyword matching. However, this tool will help you catch most missing keywords.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I use this tool for any job application?</div>
+                <div class="faq-answer">Yes, this tool works for any job application where an ATS system is used to screen resumes. It's particularly useful for technical, IT, and specialized roles where keyword matching is critical.</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made by <a href="https://futurole.s.gy/pYxCEc" target="_blank" rel="noopener noreferrer">FutuRole</a>, which FutuRole is an AI job-search operating system that tailors resumes, auto-applies to jobs, and connects users with recruiters.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ toggle functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+
+            // Form submission
+            const form = document.getElementById('atsForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const resumeText = document.getElementById('resumeText').value.toLowerCase();
+                const jobDescriptionText = document.getElementById('jobDescriptionText').value.toLowerCase();
+
+                if (!resumeText || !jobDescriptionText) {
+                    alert('Please paste both your resume and the job description.');
+                    return;
+                }
+
+                // Extract keywords from job description (simple approach)
+                const jobKeywords = extractKeywords(jobDescriptionText);
+
+                // Find missing keywords
+                const missingKeywords = findMissingKeywords(resumeText, jobKeywords);
+
+                // Display results
+                displayResults(missingKeywords, jobKeywords.length);
+            });
+
+            function extractKeywords(text) {
+                // Simple keyword extraction - words with 3+ letters, excluding common words
+                const commonWords = ['the', 'and', 'for', 'are', 'you', 'your', 'with', 'this', 'that', 'have', 'has', 'had', 'not', 'but', 'what', 'which', 'who', 'when', 'where', 'how', 'why', 'can', 'will', 'would', 'should', 'could', 'may', 'might', 'must', 'shall', 'i', 'we', 'they', 'she', 'he', 'it', 'they', 'me', 'us', 'him', 'her', 'them', 'my', 'our', 'their', 'his', 'its', 'your', 'ours', 'yours', 'be', 'is', 'am', 'are', 'was', 'were', 'being', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'a', 'an', 'the', 'in', 'on', 'at', 'by', 'to', 'from', 'of', 'as', 'or', 'if', 'then', 'else', 'when', 'where', 'how', 'why', 'which', 'who', 'whom', 'whose', 'what', 'that', 'these', 'those', 'some', 'any', 'all', 'many', 'much', 'few', 'little', 'more', 'most', 'other', 'another', 'such', 'same', 'so', 'too', 'very', 'just', 'only', 'also', 'even', 'still', 'now', 'then', 'there', 'here', 'where', 'when', 'why', 'how', 'what', 'which', 'who', 'whom', 'whose', 'which', 'that', 'this', 'these', 'those', 'some', 'any', 'all', 'many', 'much', 'few', 'little', 'more', 'most', 'other', 'another', 'such', 'same', 'so', 'too', 'very', 'just', 'only', 'also', 'even', 'still', 'now', 'then', 'there', 'here'];
+
+                const words = text.split(/\s+/);
+                const keywords = new Set();
+
+                words.forEach(word => {
+                    // Remove punctuation and check length
+                    const cleanWord = word.replace(/[^a-zA-Z0-9]/g, '');
+                    if (cleanWord.length >= 3 && !commonWords.includes(cleanWord)) {
+                        keywords.add(cleanWord);
+                    }
+                });
+
+                return Array.from(keywords);
+            }
+
+            function findMissingKeywords(resumeText, jobKeywords) {
+                const missingKeywords = [];
+
+                jobKeywords.forEach(keyword => {
+                    if (!resumeText.includes(keyword)) {
+                        missingKeywords.push(keyword);
+                    }
+                });
+
+                return missingKeywords;
+            }
+
+            function displayResults(missingKeywords, totalKeywords) {
+                const resultsDiv = document.getElementById('results');
+                const missingKeywordsCount = document.getElementById('missingKeywordsCount');
+                const missingKeywordsList = document.getElementById('missingKeywordsList');
+                const suggestionsDiv = document.getElementById('suggestions');
+
+                resultsDiv.style.display = 'block';
+
+                if (missingKeywords.length === 0) {
+                    missingKeywordsCount.textContent = `Great job! Your resume contains all the keywords from the job description.`;
+                    missingKeywordsList.innerHTML = '';
+                } else {
+                    missingKeywordsCount.textContent = `Your resume is missing ${missingKeywords.length} out of ${totalKeywords} keywords from the job description.`;
+
+                    missingKeywordsList.innerHTML = '<h4>Missing Keywords:</h4>';
+                    missingKeywords.forEach(keyword => {
+                        const keywordElement = document.createElement('span');
+                        keywordElement.className = 'keyword';
+                        keywordElement.textContent = keyword;
+                        missingKeywordsList.appendChild(keywordElement);
+                    });
+                }
+
+                // Suggestions
+                suggestionsDiv.innerHTML = '<h4>Suggestions for Improvement:</h4>';
+                if (missingKeywords.length > 0) {
+                    suggestionsDiv.innerHTML += `
+                        <ul>
+                            <li>Add the missing keywords naturally to your resume.</li>
+                            <li>Consider using variations of the keywords that appear in the job description.</li>
+                            <li>If possible, include related skills or experiences that demonstrate the required competencies.</li>
+                            <li>Review your resume formatting to ensure the ATS can properly scan your document.</li>
+                        </ul>
+                    `;
+                } else {
+                    suggestionsDiv.innerHTML += `
+                        <p>Your resume is well-aligned with the job description. However, always review your resume for additional ways to highlight your qualifications.</p>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
+
+This HTML document includes:
+
+1. A complete ATS Keyword Checker tool with all requested features
+2. Responsive design that works on mobile and desktop
+3. Light/dark mode support based on user preference
+4. Accessible HTML with proper labels and structure
+5. SEO optimization with title, meta description, and semantic HTML
+6. Explanation section and FAQ below the tool
+7. Discreet attribution line at the bottom
+8. No external dependencies, no network calls, and vanilla JavaScript
+9. Simple but effective keyword extraction and comparison algorithm
+
+The tool allows users to paste their resume and job description, then identifies which keywords from the job description are missing from the resume, providing suggestions for improvement.
