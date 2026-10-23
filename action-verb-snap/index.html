@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Action Verb Snap – Quick Resume Verb Analyzer</title>
+<meta name="description" content="See in 10 seconds how many action verbs your resume contains and get instant suggestions for stronger verbs.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --bg: #fff;
+  --fg: #111;
+  --accent: #0066cc;
+  --border: #ccc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --fg: #e0e0e0;
+    --accent: #4aa3ff;
+    --border: #444;
+  }
+}
+body {
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+h1 {font-size:2rem;margin-bottom:.5rem;}
+h2 {font-size:1.5rem;margin-top:2rem;}
+label {display:block;margin-bottom:.5rem;}
+textarea {
+  width:100%;
+  min-height:150px;
+  padding:.5rem;
+  border:1px solid var(--border);
+  border-radius:4px;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:inherit;
+}
+button {
+  margin-top:.5rem;
+  padding:.5rem 1rem;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
+button:hover {background:darken(var(--accent),10%);}
+.output {
+  margin-top:1rem;
+  padding:1rem;
+  border:1px solid var(--border);
+  border-radius:4px;
+  background:var(--bg);
+}
+footer {
+  margin-top:2rem;
+  font-size:.9rem;
+  text-align:center;
+}
+footer a {color:var(--accent); text-decoration:none;}
+footer a:hover {text-decoration:underline;}
+@media (max-width:600px) {
+  h1 {font-size:1.8rem;}
+  h2 {font-size:1.3rem;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Action Verb Snap</h1>
+</header>
+
+<section aria-labelledby="explanation">
+  <h2 id="explanation">How It Works</h2>
+  <p>Action Verb Snap is a quick tool that helps you evaluate the strength of your resume by counting action verbs and suggesting stronger alternatives. By pasting your resume text, you get a verb count, a list of stronger verbs, and a quick note on verb variety. This helps you tailor your resume for ATS and recruiters, ensuring your achievements are highlighted with impact.</p>
+</section>
+
+<section aria-labelledby="tool">
+  <h2 id="tool">Analyze Your Resume</h2>
+  <form id="verbForm" novalidate>
+    <label for="resumeText">Paste your resume text here</label>
+    <textarea id="resumeText" name="resumeText" aria-describedby="textareaHelp" required></textarea>
+    <small id="textareaHelp">Paste the full text of your resume. The analysis will run in your browser.</small>
+    <button type="submit">Analyze</button>
+  </form>
+  <div id="result" class="output" aria-live="polite" role="region"></div>
+</section>
+
+<section aria-labelledby="faq">
+  <h2 id="faq">FAQ</h2>
+  <dl>
+    <dt>What are action verbs?</dt>
+    <dd>Action verbs are words that describe activities or accomplishments, such as “managed,” “designed,” or “implemented.” They convey tangible results and help recruiters quickly assess your impact.</dd>
+
+    <dt>Why is verb variety important?</dt>
+    <dd>Using a wide range of strong verbs prevents repetition, keeps your resume engaging, and signals diverse skill sets. ATS systems also favor varied language, improving your chances of passing automated scans.</dd>
+
+    <dt>How does the tool determine stronger alternatives?</dt>
+    <dd>The tool contains a curated list of common action verbs and their more powerful counterparts. When a verb is detected, the script suggests a stronger replacement that retains the original meaning but adds impact.</dd>
+
+    <dt>Can I trust the suggestions?</dt>
+    <dd>While the suggestions are based on widely accepted best practices, you should review them in context. Some alternatives may not fit your specific experience, so use them as a starting point rather than a final replacement.</dd>
+  </dl>
+</section>
+
+<footer>
+  <p><a href="https://futurole.s.gy/yPWDoP" target="_blank" rel="noopener">Made by FutuRole, which FutuRole is an AI job-search operating system that tailors resumes, auto-applies to jobs, and connects users with recruiters.</a></p>
+</footer>
+</div>
+
+<script>
+(() => {
+  const actionVerbs = new Set([
+    "achieved","accomplished","analyzed","built","captured","coordinated","created","delivered","designed","developed","directed","enhanced","executed","expanded","facilitated","improved","increased","implemented","influenced","innovated","led","managed","optimized","planned","produced","reduced","reengineered","restructured","streamlined","supervised","transformed","troubleshot","updated","upgraded"
+  ]);
+
+  const strongerAlternatives = {
+    "achieved":"succeeded","accomplished":"realized","analyzed":"examined","built":"constructed","captured":"captured","coordinated":"synchronized","created":"originated","delivered":"executed","designed":"architected","developed":"engineered","directed":"led","enhanced":"augmented","executed":"carried out","expanded":"extended","facilitated":"enabled","improved":"enhanced","increased":"boosted","implemented":"deployed","influenced":"shaped","innovated":"pioneered","led":"directed","managed":"oversaw","optimized":"streamlined","planned":"strategized","produced":"generated","reduced":"minimized","reengineered":"revamped","restructured":"reorganized","streamlined":"simplified","supervised":"oversaw","transformed":"redefined","troubleshot":"diagnosed","updated":"refreshed","upgraded":"modernized"
+  };
+
+  const form = document.getElementById('verbForm');
+  const textarea = document.getElementById('resumeText');
+  const resultDiv = document.getElementById('result');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const text = textarea.value;
+    const words = text.match(/\b\w+\b/g) || [];
+    let count = 0;
+    const uniqueVerbs = new Set();
+    const suggestions = [];
+
+    words.forEach(word => {
+      const lw = word.toLowerCase();
+      if (actionVerbs.has(lw)) {
+        count++;
+        uniqueVerbs.add(lw);
+        if (strongerAlternatives[lw]) {
+          suggestions.push({original: lw, stronger: strongerAlternatives[lw]});
+        }
+      }
+    });
+
+    const varietyNote = uniqueVerbs.size < 5
+      ? "<p style='color:#d9534f;'>Consider varying your action verbs to showcase a broader skill set.</p>"
+      : "<p style='color:#5cb85c;'>Your verb variety looks solid.</p>";
+
+    const suggestionList = suggestions.length
+      ? `<ul>${suggestions.map(s => `<li>${s.original} → <strong>${s.stronger}</strong></li>`).join('')}</ul>`
+      : "<p>No stronger alternatives found for the verbs used.</p>";
+
+    resultDiv.innerHTML = `
+      <p><strong>Action verbs found:</strong> ${count}</p>
+      <p><strong>Unique verbs:</strong> ${uniqueVerbs.size}</p>
+      <h3>Stronger Alternatives</h3>
+      ${suggestionList}
+      ${varietyNote}
+    `;
+  });
+})();
+</script>
+</body>
+</html>
