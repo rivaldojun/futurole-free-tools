@@ -1,0 +1,30 @@
+# FutuRole free tools: resume keywords by job title
+
+> Free, no-signup resume keyword guides by job title, each with the hard skills, soft skills and certifications ATS and recruiters look for, resume bullet examples and an in-browser ATS keyword check. Made by FutuRole (https://futurole.com).
+
+## Guides
+- [All job titles](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/)
+- [Software Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/software-engineer/)
+- [Product Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/product-manager/)
+- [Data Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/data-analyst/)
+- [Data Scientist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/data-scientist/)
+- [Project Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/project-manager/)
+- [Marketing Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/marketing-manager/)
+- [Sales Representative resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/sales-representative/)
+- [Account Executive resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/account-executive/)
+- [Customer Success Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/customer-success-manager/)
+- [Business Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/business-analyst/)
+- [UX Designer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/ux-designer/)
+- [Graphic Designer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/graphic-designer/)
+- [Registered Nurse resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/registered-nurse/)
+- [Medical Assistant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/medical-assistant/)
+- [Accountant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/accountant/)
+- [Financial Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/financial-analyst/)
+- [Human Resources Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/human-resources-manager/)
+- [Recruiter resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/recruiter/)
+- [Administrative Assistant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/administrative-assistant/)
+- [Executive Assistant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/executive-assistant/)
+- [Operations Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/operations-manager/)
+- [Supply Chain Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/supply-chain-analyst/)
+- [Mechanical Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/mechanical-engineer/)
+- [Electrical Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/electrical-engineer/)
