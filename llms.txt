@@ -31,3 +31,4 @@
 - [Civil Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/civil-engineer/)
 - [DevOps Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/devops-engineer/)
 - [Cloud Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/cloud-engineer/)
+- [Cybersecurity Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/cybersecurity-analyst/)
