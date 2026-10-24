@@ -30,3 +30,4 @@
 - [Electrical Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/electrical-engineer/)
 - [Civil Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/civil-engineer/)
 - [DevOps Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/devops-engineer/)
+- [Cloud Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/cloud-engineer/)
