@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Job Description Simplifier - FutuRole</title>
+  <meta name="description" content="Paste a job description, get a clear, concise summary in 10 seconds, showing key skills and requirements to focus your CV on. No sign-up required.">
+  <style>
+    /* Base styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .tool-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: background-color 0.3s;
+    }
+
+    body.dark-mode .tool-container {
+      background-color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      display: none;
+      transition: background-color 0.3s;
+    }
+
+    body.dark-mode .result {
+      background-color: #444;
+    }
+
+    .loading {
+      text-align: center;
+      display: none;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    body.dark-mode .footer {
+      color: #aaa;
+    }
+
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    body.dark-mode .footer a {
+      color: #66b3ff;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      textarea {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Instant Job Description Simplifier</h1>
+    <p class="description">Paste a job description below to get a quick summary of the key skills and requirements you should focus on for your CV.</p>
+
+    <div class="tool-container">
+      <textarea id="job-description" placeholder="Paste the job description here..."></textarea>
+      <button id="simplify-btn">Simplify</button>
+      <div class="loading" id="loading">
+        <p>Analyzing... This usually takes about 10 seconds.</p>
+      </div>
+      <div class="result" id="result">
+        <h2>Summary</h2>
+        <p id="summary-text"></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Made by <a href="https://futurole.s.gy/tqFiaD">FutuRole</a>, a one-stop AI platform for job search, helping candidates create optimized CVs, track applications, and automate job submissions.</p>
+    </div>
+  </div>
+
+  <script>
+    // Simple "AI" simulation - in reality, this would call a backend API
+    function simplifyJobDescription(text) {
+      // This is a placeholder function. In a real application, you would send the text to an AI service (like OpenAI)
+      // and return the response. Here, we'll just extract some keywords from the text.
+
+      // Split the text into words
+      const words = text.split(/\s+/);
+
+      // Define a list of common job-related keywords to look for
+      const keyWords = [
+        "experience", "years", "skill", "skills", "knowledge", "expertise",
+        "degree", "bachelor", "master", "phd", "certificate", "certification",
+        "python", "java", "c++", "javascript", "html", "css", "sql", "nosql",
+        "aws", "azure", "gcp", "cloud", "docker", "kubernetes",
+        "agile", "scrum", "kanban", "devops",
+        "communication", "teamwork", "leadership", "management",
+        "project", "product", "design", "analysis", "testing", "qa",
+        "marketing", "sales", "finance", "accounting",
+        "healthcare", "education", "research", "data", "analytics", "machine learning", "ai"
+      ];
+
+      // Count the frequency of each keyword
+      const wordCounts = {};
+      words.forEach(word => {
+        const lowerWord = word.toLowerCase();
+        if (keyWords.includes(lowerWord)) {
+          wordCounts[lowerWord] = (wordCounts[lowerWord] || 0) + 1;
+        }
+      });
+
+      // Sort the keywords by frequency
+      const sortedKeywords = Object.keys(wordCounts).sort((a, b) => wordCounts[b] - wordCounts[a]);
+
+      // Take the top 5-10 most frequent keywords
+      const topKeywords = sortedKeywords.slice(0, 8);
+
+      // Construct a summary sentence
+      let summary = "Based on the provided job description, the key skills and requirements are: ";
+      summary += topKeywords.join(", ");
+
+      return summary;
+    }
+
+    // Event listener for the simplify button
+    document.getElementById('simplify-btn').addEventListener('click', function() {
+      const jobDescription = document.getElementById('job-description').value;
+      const resultDiv = document.getElementById('result');
+      const loadingDiv = document.getElementById('loading');
+      const summaryText = document.getElementById('summary-text');
+
+      if (jobDescription.trim() === '') {
+        alert('Please paste a job description first.');
+        return;
+      }
+
+      // Show loading indicator
+      loadingDiv.style.display = 'block';
+      resultDiv.style.display = 'none';
+
+      // Simulate a delay (e.g., 10 seconds) to mimic an API call
+      setTimeout(function() {
+        // Generate the summary
+        const summary = simplifyJobDescription(jobDescription);
+
+        // Update the UI
+        summaryText.textContent = summary;
+        loadingDiv.style.display = 'none';
+        resultDiv.style.display = 'block';
+      }, 10000); // 10000 milliseconds = 10 seconds
+    });
+  </script>
+</body>
+</html>
