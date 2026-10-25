@@ -38,3 +38,4 @@
 - [Full Stack Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/full-stack-developer/)
 - [Mobile Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/mobile-developer/)
 - [Machine Learning Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/machine-learning-engineer/)
+- [Content Writer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/content-writer/)
