@@ -36,3 +36,4 @@
 - [Frontend Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/frontend-developer/)
 - [Backend Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/backend-developer/)
 - [Full Stack Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/full-stack-developer/)
+- [Mobile Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/mobile-developer/)
