@@ -34,3 +34,4 @@
 - [Cybersecurity Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/cybersecurity-analyst/)
 - [QA Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/qa-engineer/)
 - [Frontend Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/frontend-developer/)
+- [Backend Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/backend-developer/)
