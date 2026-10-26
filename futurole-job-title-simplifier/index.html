@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FutuRole Job Title Simplifier</title>
+<meta name="description" content="Simplify any job title or description snippet to core ATS keywords in under 10 seconds, helping you tailor your CV quickly and effectively." />
+<style>
+  :root {
+    --color-bg-light: #ffffff;
+    --color-text-light: #222222;
+    --color-bg-dark: #121212;
+    --color-text-dark: #e0e0e0;
+    --color-primary: #0066cc;
+    --color-primary-dark: #3399ff;
+    --color-border: #cccccc;
+    --color-border-dark: #444444;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  html {
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+  .container {
+    max-width: 720px;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+  header p {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #555555;
+  }
+  body.dark header p {
+    color: #aaaaaa;
+  }
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    resize: vertical;
+    background-color: transparent;
+    color: inherit;
+    transition: border-color 0.3s ease;
+  }
+  body.dark textarea {
+    border-color: var(--color-border-dark);
+  }
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 3px var(--color-primary);
+  }
+  button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: var(--color-primary-dark);
+    outline: none;
+  }
+  .output {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    min-height: 3rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: #222222;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  body.dark .output {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  .disclaimer {
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    color: #666666;
+  }
+  body.dark .disclaimer {
+    color: #999999;
+  }
+  a.disclaimer-link {
+    color: inherit;
+    text-decoration: underline;
+  }
+  a.disclaimer-link:focus,
+  a.disclaimer-link:hover {
+    outline: none;
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+  section.explanation, section.faq {
+    margin-top: 3rem;
+  }
+  section.explanation p, section.faq p {
+    max-width: 700px;
+  }
+  section.faq h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  section.faq dl {
