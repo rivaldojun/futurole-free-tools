@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Achievement Bullet Generator – Turn a Job Duty into 3 Powerful CV Points</title>
+    <meta name="description" content="Paste a single job duty and (optionally) a target role, then instantly receive three achievement‑focused bullet points with metric placeholders for your resume.">
+    <style>
+        :root {
+            --bg:#fff;
+            --text:#111;
+            --accent:#0066cc;
+            --input-bg:#f9f9f9;
+            --border:#ddd;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg:#111;
+                --text:#eee;
+                --accent:#66aaff;
+                --input-bg:#222;
+                --border:#444;
+            }
+        }
+        body{
+            margin:0;
+            font-family:system-ui,Arial,sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+        }
+        header, main, footer{
+            max-width:800px;
+            margin:auto;
+            padding:1rem;
+        }
+        h1{
+            font-size:2rem;
+            margin-bottom:.5rem;
+        }
+        .toggle-theme{
+            background:none;
+            border:none;
+            color:var(--accent);
+            cursor:pointer;
+            font-size:1rem;
+            margin-left:auto;
+        }
+        .flex{
+            display:flex;
+            align-items:center;
+            gap:1rem;
+        }
+        label{
+            display:block;
+            margin-top:.75rem;
+            font-weight:600;
+        }
+        input[type=text], textarea{
+            width:100%;
+            padding:.5rem;
+            margin-top:.25rem;
+            border:1px solid var(--border);
+            border-radius:4px;
+            background:var(--input-bg);
+            color:var(--text);
+            font-size:1rem;
+        }
+        textarea{
+            min-height:120px;
+            resize:vertical;
+        }
+        button{
+            padding:.5rem 1rem;
+            background:var(--accent);
+            color:#fff;
+            border:none;
+            border-radius:4px;
+            cursor:pointer;
+            font-size:1rem;
+        }
+        button:focus{
+            outline:2px solid var(--accent);
+            outline-offset:2px;
+        }
+        .output{
+            margin-top:1rem;
+        }
+        .copy-btn{
+            margin-top:.5rem;
+            background:#555;
+        }
+        @media (max-width:600px){
+            .flex{
+                flex-direction:column;
+                align-items:stretch;
+            }
+        }
+        .discreet{
+            font-size:.85rem;
+            text-align:center;
+            margin-top:2rem;
+            color:#777;
+        }
+        .discreet a{
+            color:#777;
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="flex">
+        <h1>Resume Achievement Bullet Generator</h1>
+        <button class="toggle-theme" aria-label="Toggle light/dark mode">🌓</button>
+    </header>
+
+    <main>
+        <section aria-labelledby="explanation">
+            <h2 id="explanation" class="visually-hidden">What this tool does</h2>
+            <p>Paste a single job duty (e.g., “Managed a team of sales reps”) and optionally specify the role you’re applying for. In under ten seconds you’ll receive three achievement‑focused bullet points, each containing metric placeholders ready for you to customise.</p>
+        </section>
+
+        <section aria-labelledby="generator">
+            <h2 id="generator" class="visually-hidden">Bullet point generator</h2>
+            <form id="bulletForm" novalidate>
+                <label for="duty">Job duty (one line)</label>
+                <input type="text" id="duty" name="duty" required aria-required="true" placeholder="e.g., Coordinated weekly marketing campaigns">
+
+                <label for="role">Target role (optional)</label>
+                <input type="text" id="role" name="role" placeholder="e.g., Marketing Manager">
+
+                <button type="submit">Generate Bullet Points</button>
+            </form>
+
+            <div class="output" aria-live="polite" hidden>
+                <label for="results">Your achievement bullet points (copy‑ready)</label>
+                <textarea id="results" readonly></textarea>
+                <button class="copy-btn" type="button">Copy to Clipboard</button>
+            </div>
+        </section>
+
+        <section aria-labelledby="faq">
+            <h2 id="faq">FAQ</h2>
+            <details>
+                <summary>How are the metric placeholders formatted?</summary>
+                <p>Placeholders appear as <code>[X%]</code>, <code>[number]</code> or <code>[$ amount]</code>. Replace them with the actual figures that reflect your achievements.</p>
+            </details>
+            <details>
+                <summary>Can I use this tool for any industry?</summary>
+                <p>Yes. The generator uses a broad set of action verbs and templates that work across most professional fields.</p>
+            </details>
+            <details>
+                <summary>Is the generated text SEO‑friendly?</summary>
+                <p>The bullets incorporate common resume keywords (e.g., “increased”, “streamlined”, “exceeded”) which help applicant tracking systems recognize relevant achievements.</p>
+            </details>
+            <details>
+                <summary>Do I need an internet connection?</summary>
+                <p>No. All processing happens locally in your browser, so the tool works offline after the page loads.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer class="discreet">
+        Made by <a href="https://futurole.s.gy/nFQs09" target="_blank" rel="noopener">FutuRole</a>, which FutuRole est une plateforme d’IA tout‑en‑un pour la recherche d’emploi, aidant les candidats à créer des CV optimisés, à suivre les candidatures et à automatiser l’envoi de demandes d’emploi.
+    </footer>
+
+    <script>
+        // Light/Dark toggle
+        const toggleBtn = document.querySelector('.toggle-theme');
+        toggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.dataset.theme === 'dark';
+            document.documentElement.dataset.theme = isDark ? '' : 'dark';
+            if (isDark) {
+                document.documentElement.style.removeProperty('--bg');
+                document.documentElement.style.removeProperty('--text');
+            } else {
+                // Force dark colors
+                document.documentElement.style.setProperty('--bg', '#111');
+                document.documentElement.style.setProperty('--text', '#eee');
+            }
+        });
+
+        // Simple bullet generator
+        const actionVerbs = [
+            "Boosted", "Accelerated", "Advanced", "Amplified", "Built", "Coordinated",
+            "Delivered", "Drove", "Elevated", "Enhanced", "Expanded", "Generated",
+            "Improved", "Increased", "Optimized", "Reduced", "Streamlined", "Strengthened"
+        ];
+        const templates = [
+            "{verb} {object} by [X%] through {method}.",
+            "{verb} {object} resulting in [number] new {outcome}.",
+            "{verb} {object} saving [$/amount] and cutting [X%] time."
+        ];
+
+        function randomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function generateBullets(duty, role) {
+            // Extract a noun from duty (very naive)
+            const words = duty.split(' ');
+            const object = words.slice(1).join(' ') || duty;
+            const bullets = [];
+            for (let i = 0; i < 3; i++) {
+                const verb = randomItem(actionVerbs);
+                const tmpl = randomItem(templates);
+                const filled = tmpl
+                    .replace('{verb}', verb)
+                    .replace('{object}', object)
+                    .replace('{method}', role ? `as a ${role}` : "using proven methods")
+                    .replace('{outcome}', role ? `${role} goals` : "performance metrics")
+                    .replace('[$/amount]', '[$ amount]');
+                bullets.push(`• ${filled}`);
+            }
+            return bullets.join('\n');
+        }
+
+        const form = document.getElementById('bulletForm');
+        const outputDiv = document.querySelector('.output');
+        const resultsArea = document.getElementById('results');
+        const copyBtn = document.querySelector('.copy-btn');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const duty = form.duty.value.trim();
+            const role = form.role.value.trim();
+            if (!duty) {
+                alert('Please enter a job duty.');
+                return;
+            }
+            const bullets = generateBullets(duty, role);
+            resultsArea.value = bullets;
+            outputDiv.hidden = false;
+            resultsArea.focus();
+        });
+
+        copyBtn.addEventListener('click', () => {
+            resultsArea.select();
+            document.execCommand('copy');
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => copyBtn.textContent = 'Copy to Clipboard', 1500);
+        });
+    </script>
+</body>
+</html>
