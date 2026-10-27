@@ -47,3 +47,4 @@
 - [Teacher resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/teacher/)
 - [Pharmacist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/pharmacist/)
 - [Physical Therapist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/physical-therapist/)
+- [Dental Hygienist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/dental-hygienist/)
