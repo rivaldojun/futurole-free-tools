@@ -58,3 +58,4 @@
 - [Plumber resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/plumber/)
 - [HVAC Technician resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/hvac-technician/)
 - [Chef resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/chef/)
+- [Restaurant Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/restaurant-manager/)
