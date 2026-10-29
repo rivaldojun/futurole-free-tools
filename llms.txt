@@ -60,3 +60,4 @@
 - [Chef resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/chef/)
 - [Restaurant Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/restaurant-manager/)
 - [Barista resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/barista/)
+- [Event Planner resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/event-planner/)
