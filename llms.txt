@@ -68,3 +68,4 @@
 - [Logistics Coordinator resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/logistics-coordinator/)
 - [Product Designer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/product-designer/)
 - [UI Designer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/ui-designer/)
+- [Technical Writer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/technical-writer/)
