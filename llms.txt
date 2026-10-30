@@ -63,3 +63,4 @@
 - [Event Planner resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/event-planner/)
 - [Office Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/office-manager/)
 - [Bookkeeper resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/bookkeeper/)
+- [Payroll Specialist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/payroll-specialist/)
