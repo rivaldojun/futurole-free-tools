@@ -72,3 +72,4 @@
 - [Solutions Architect resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/solutions-architect/)
 - [Site Reliability Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/site-reliability-engineer/)
 - [Database Administrator resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/database-administrator/)
+- [Network Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/network-engineer/)
