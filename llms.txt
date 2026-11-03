@@ -87,3 +87,4 @@
 - [Consultant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/consultant/)
 - [Management Consultant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/management-consultant/)
 - [Investment Banking Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/investment-banking-analyst/)
+- [Credit Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/credit-analyst/)
