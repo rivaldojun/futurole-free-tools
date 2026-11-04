@@ -93,3 +93,4 @@
 - [Claims Adjuster resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/claims-adjuster/)
 - [Compliance Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/compliance-analyst/)
 - [Risk Analyst resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/risk-analyst/)
+- [Auditor resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/auditor/)
