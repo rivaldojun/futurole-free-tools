@@ -100,3 +100,4 @@
 - [Lab Technician resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/lab-technician/)
 - [Clinical Research Coordinator resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/clinical-research-coordinator/)
 - [Healthcare Administrator resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/healthcare-administrator/)
+- [Caregiver resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/caregiver/)
