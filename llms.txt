@@ -103,3 +103,4 @@
 - [Caregiver resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/caregiver/)
 - [Social Worker resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/social-worker/)
 - [Counselor resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/counselor/)
+- [Nursing Assistant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/nursing-assistant/)
