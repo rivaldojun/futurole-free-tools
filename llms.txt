@@ -109,3 +109,4 @@
 - [Construction Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/construction-manager/)
 - [Project Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/project-engineer/)
 - [Quality Assurance Specialist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/quality-assurance-specialist/)
+- [Manufacturing Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/manufacturing-engineer/)
