@@ -105,3 +105,4 @@
 - [Counselor resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/counselor/)
 - [Nursing Assistant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/nursing-assistant/)
 - [Emergency Medical Technician resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/emergency-medical-technician/)
+- [Security Guard resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/security-guard/)
