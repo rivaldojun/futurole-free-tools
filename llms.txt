@@ -118,3 +118,4 @@
 - [Business Development Representative resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/business-development-representative/)
 - [Growth Marketer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/growth-marketer/)
 - [Email Marketing Specialist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/email-marketing-specialist/)
+- [Data Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/data-engineer/)
