@@ -121,3 +121,4 @@
 - [Data Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/data-engineer/)
 - [Analytics Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/analytics-engineer/)
 - [BI Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/bi-developer/)
+- [Game Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/game-developer/)
