@@ -124,3 +124,4 @@
 - [Game Developer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/game-developer/)
 - [Embedded Software Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/embedded-software-engineer/)
 - [Hardware Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/hardware-engineer/)
+- [Biomedical Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/biomedical-engineer/)
