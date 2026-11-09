@@ -126,3 +126,4 @@
 - [Hardware Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/hardware-engineer/)
 - [Biomedical Engineer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/biomedical-engineer/)
 - [Environmental Scientist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/environmental-scientist/)
+- [Chemist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/chemist/)
