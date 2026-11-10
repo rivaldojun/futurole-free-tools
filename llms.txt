@@ -129,3 +129,4 @@
 - [Chemist resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/chemist/)
 - [Teaching Assistant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/teaching-assistant/)
 - [Librarian resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/librarian/)
+- [Translator resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/translator/)
