@@ -133,3 +133,4 @@
 - [Flight Attendant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/flight-attendant/)
 - [Hotel Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/hotel-manager/)
 - [Front Desk Agent resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/front-desk-agent/)
+- [Fitness Trainer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/fitness-trainer/)
