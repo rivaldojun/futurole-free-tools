@@ -131,3 +131,4 @@
 - [Librarian resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/librarian/)
 - [Translator resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/translator/)
 - [Flight Attendant resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/flight-attendant/)
+- [Hotel Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/hotel-manager/)
