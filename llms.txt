@@ -136,3 +136,4 @@
 - [Fitness Trainer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/fitness-trainer/)
 - [Dietitian resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/dietitian/)
 - [Veterinary Technician resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/veterinary-technician/)
+- [Product Owner resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/product-owner/)
