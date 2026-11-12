@@ -140,3 +140,4 @@
 - [Category Manager resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/category-manager/)
 - [Merchandiser resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/merchandiser/)
 - [Buyer resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/buyer/)
+- [Store Associate resume keywords](https://rivaldojun.github.io/futurole-free-tools/resume-keywords/store-associate/)
